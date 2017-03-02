@@ -6,11 +6,9 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class test {
     static Service[] serviceArr = new Service[13];
@@ -123,6 +121,8 @@ public class test {
             for (int i = 0; i < G_S.size(); i++) {
                 G_SArr[i] = G_S.get(i);
             }
+            Map<Integer, ArrayList<ArrayList<ArrayList<Service>>>> selectServiceMap = new HashMap<>();
+            Map<Integer, ArrayList<ArrayList<ArrayList<Service>>>> _selectServiceMap = new HashMap<>();
             for (m = 1; m <= n; m++) {
                 serviceListList = new ArrayList<>();//
                 noListList = new ArrayList<>();
@@ -133,9 +133,9 @@ public class test {
                     tempList.removeAll(serviceListList.get(i));
                     noListList.add(tempList);
                 }
-
-                
+                selectServiceMap.put((Integer)m,serviceListList);
             }
+
 
         }
 
