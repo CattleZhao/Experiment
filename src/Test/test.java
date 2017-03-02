@@ -121,8 +121,8 @@ public class test {
             for (int i = 0; i < G_S.size(); i++) {
                 G_SArr[i] = G_S.get(i);
             }
-            Map<Integer, ArrayList<ArrayList<ArrayList<Service>>>> selectServiceMap = new HashMap<>();
-            Map<Integer, ArrayList<ArrayList<ArrayList<Service>>>> _selectServiceMap = new HashMap<>();
+            Map<Integer, ArrayList<ArrayList<Service>>> selectServiceMap = new HashMap<>();
+            Map<Integer, ArrayList<ArrayList<Service>>> _selectServiceMap = new HashMap<>();
             for (m = 1; m <= n; m++) {
                 serviceListList = new ArrayList<>();//
                 noListList = new ArrayList<>();
@@ -133,7 +133,19 @@ public class test {
                     tempList.removeAll(serviceListList.get(i));
                     noListList.add(tempList);
                 }
-                selectServiceMap.put((Integer)m,serviceListList);
+                selectServiceMap.put(m, serviceListList);
+                _selectServiceMap.put(m, noListList);
+            }
+            for (m = 1; m <= n; m++) {
+                double sum_ava = 0.0;
+                for (int k = m; k <= n; k++) {
+                    double ava = 1.0;
+                    ArrayList<ArrayList<Service>> serListList = selectServiceMap.get(k);
+                    ArrayList<ArrayList<Service>> _serListList = _selectServiceMap.get(k);
+                    for(int i = 0;i<serListList.size();i++){
+                        
+                    }
+                }
             }
 
 
