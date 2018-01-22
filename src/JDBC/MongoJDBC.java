@@ -12,7 +12,7 @@ import com.mongodb.*;
 public class MongoJDBC {
 	public static DB connection(){
 		@SuppressWarnings("deprecation")
-		Mongo mongo = new Mongo( );
+		Mongo mongo = new Mongo("10.199.130.133",27017);
         @SuppressWarnings("deprecation")
 		DB db = mongo.getDB("AllDate");
         return db;

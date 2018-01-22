@@ -3,16 +3,10 @@ package com.scorpion.optimize;
 /**
  * Created by Scorpion on 2017/3/6.
  */
-public class BestTour {
+public class AvaResult {
     private double QoS;
     private int m;
-
-    public BestTour() {
-    }
-    public BestTour(double qoS, int m) {
-        QoS = qoS;
-        this.m = m;
-    }
+    private int[] tour;
 
     public double getQoS() {
         return QoS;
@@ -28,5 +22,13 @@ public class BestTour {
 
     public void setM(int m) {
         this.m = m;
+    }
+
+    public int[] getTour() {
+        return tour;
+    }
+
+    public void setTour(int[] tour) {
+        this.tour = tour;
     }
 }
